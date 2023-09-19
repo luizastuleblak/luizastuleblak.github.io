@@ -2,13 +2,14 @@ let portfolioTabs = document.getElementsByClassName('portfolio-tab');
 let tabContents = document.getElementsByClassName('tab-content');
 const menuBtn = document.querySelector('.ri-menu-5-line');
 const navList = document.querySelector('.navlist');
-const nav = document.querySelector('.nav');
+const nav = document.querySelector('nav');
+const footerYear = document.querySelector('.footer-year');
 
 function tabOpen(nam) { 
-	for (portfolioTab of portfolioTabs) {
+	for(portfolioTab of portfolioTabs) {
 		portfolioTab.classList.remove('active-btn');
 	}
-	for (tabContent of tabContents) {
+	for(tabContent of tabContents) {
 		tabContent.classList.remove('active-content')
 	}
 	event.currentTarget.classList.add('active-btn');
@@ -17,20 +18,30 @@ function tabOpen(nam) {
  
 
 menuBtn.onclick = function () {
-	menuBtn.classList.toggle('ri-menu-5-line');
+	menuBtn.classList.toggle('ri-arrow-up-double-line');
 	navList.classList.toggle('active');
 }
 
 window.onscroll = function () {
-	navList.classList.remove('active');
-	menuBtn.classList.remove('ri-menu-5-line');
+	// navList.classList.remove('active');
+	// menuBtn.classList.remove('ri-arrow-up-double-line');
+	// menuBtn.classList.toggle('ri-arrow-up-double-line');
+	// navList.classList.toggle('active');
 
-	if (screenY > 50) {
+	if (scrollY > 50) {
 		nav.classList.add('scrolling')
 	} else {
 		nav.classList.remove('scrolling')
 	}
 }
+
+
+const handleCurrentYear = () => {
+	const year = (new Date).getFullYear();
+	footerYear.innerText = year;
+}
+
+handleCurrentYear();
 
 // ------------------ANIMATIONS----------------------
 
@@ -70,4 +81,5 @@ scroll.reveal('.portfolio-container', { origin: 'bottom', reset: false });
 scroll.reveal('.contact-container .box:nth-child(1)', { delay: 100, origin: 'left', reset: false });
 scroll.reveal('.contact-container .box:nth-child(2)', { delay: 300, origin: 'left', reset: false });
 scroll.reveal('.title', { origin: 'top', reset: false });
+scroll.reveal('.ri-arrow-right-circle-line', {delay: 100, origin: 'bottom' });
 

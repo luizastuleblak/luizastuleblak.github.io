@@ -90,29 +90,30 @@ section {
 
 .logo img {
   width: 3rem;
+  cursor: pointer;
 }
 
 .navlist {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
+
 .navlist li a {
   position: relative;
   padding: 1rem;
   text-transform: uppercase;
   font-size: 0.8rem;
+  z-index: 3;
 }
+
 .navlist li a:hover {
   color: #db90bc;
 }
 
-.nav-container > div:last-child {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+.navlist li {
+  position: relative;
 }
 
 .menu-btn {
@@ -123,7 +124,7 @@ section {
 .scrolling {
   position: fixed;
   width: 100%;
-  background-color: #1345e5;
+  background-color: #fff;
   z-index: 1111;
   box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
 }
@@ -136,6 +137,7 @@ section {
 }
 .home-container .image img {
   max-width: 500px;
+  margin: 0 auto;
 }
 
 .content {
@@ -251,6 +253,12 @@ section {
   top: -2rem;
   left: 70%;
   border-radius: 50% 0 50% 50%;
+}
+
+.my-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .portfolio .title h4 {
@@ -407,7 +415,7 @@ section {
   height: 40px;
   position: relative;
 }
-.footer h5 {
+.footer p {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -416,8 +424,9 @@ section {
   font-size: 1rem;
   font-family: "Mulish", sans-serif;
 }
-.footer h5 span {
+.footer p span {
   font-style: italic;
+  font-family: "Playfair Display", serif;
 }
 
 @media (max-width: 1024px) {
@@ -431,20 +440,25 @@ section {
   }
   .navlist {
     position: absolute;
-    top: 8rem;
-    right: 10%;
-    width: 30%;
+    top: 2.2rem;
+    right: 5%;
+    width: 50%;
     background-color: #fff;
+    color: #1345e5;
     box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
     flex-direction: column;
     padding: 2rem 0;
     z-index: 2222;
     opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
   }
-  .navlist li {
+  .navlist > li {
     margin: 0.5rem 0;
+  }
+  .navlist.active {
+    opacity: 1;
+  }
+  .nav-container {
+    margin-bottom: 2rem;
   }
   .home-container .content {
     top: 4rem;
@@ -463,6 +477,10 @@ section {
   }
   .portfolio-container .tab-content {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .footer p {
+    font-size: 0.7rem;
+    text-align: center;
   }
 }
 @media (max-width: 492px) {
@@ -502,13 +520,16 @@ section {
     grid-template-columns: none;
     padding-bottom: 0;
   }
+  .my-skills i {
+    display: none;
+  }
   .contact-container {
     display: block;
   }
   .contact-container .form .form-input {
     margin-top: 1rem;
   }
-  .footer h5 {
+  .footer p {
     font-size: 0.7rem;
     text-align: center;
   }
