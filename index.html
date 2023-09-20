@@ -218,7 +218,7 @@
 
 	<section class="contact" id="contact">
 		<div class="title">
-			<h4>Contact with me</h4>
+			<h4>Text me</h4>
 		</div>
 		<div class="contact-container container">
 			<div class="content">
@@ -237,17 +237,18 @@
 					</div>
 				</div>
 			</div>
-			<form action="" class="form">
+			<form action="mail.php" method="post" class="form">
 				<div class="form-input">
-					<input type="text" name="Name" id="" placeholder="Your Name">
-					<input type="email" name="Email" id="" placeholder="Your Email">
-					<input type="text" name="Subect" id="" placeholder="Your Subject">
+					<input type="text" name="name" id="name" placeholder="Your Name" required>
+					<input type="email" name="email" id="email" placeholder="Your Email" required>
+					<input type="text" name="subject" id="subject" placeholder="Your Subject" required>
 				</div>
 				<div class="form-textarea">
-					<textarea name="Message" id="" cols="10" rows="10" placeholder="Your Message"></textarea>
-					<button type="submit" class="btn">Send</button>
+					<textarea name="Message" id="msg" cols="10" rows="10" placeholder="Your Message" required></textarea>
 				</div>
+				<button type="submit" class="btn">Send</button>
 			</form>
+			<p class="msg-status"></p>
 		</div>
 	</section>
 <footer class="footer">

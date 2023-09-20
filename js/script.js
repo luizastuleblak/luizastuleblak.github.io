@@ -4,6 +4,26 @@ const menuBtn = document.querySelector('.ri-menu-5-line');
 const navList = document.querySelector('.navlist');
 const nav = document.querySelector('nav');
 const footerYear = document.querySelector('.footer-year');
+const msgStatus = document.querySelector('.msg-status');
+
+console.log(document.location.search);
+
+if (document.location.search === '?mail_status=sent') {
+	msgStatus.classList.add('success');
+	msgStatus.textContent = 'Your message has been sent. Thank you!';
+
+	setTimeout(() => {
+		msgStatus.classList.remove('success')
+	}, 3000);
+}
+if (document.location.search === '?mail_status=error') {
+	msgStatus.classList.add('Error');
+	msgStatus.textContent = 'Error occured!';
+
+	setTimeout(() => {
+		msgStatus.classList.remove('error')
+	}, 3000);
+}
 
 function tabOpen(name) { 
 	for(portfolioTab of portfolioTabs) {
