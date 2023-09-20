@@ -406,29 +406,7 @@ section {
   margin: 0 auto;
   width: 100%;
   border-radius: 5px;
-}
-
-.msg-status {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 2.5rem;
-  padding: 3rem;
-  margin: 2rem;
-  width: 10rem;
-  border-radius: 12px;
-  font-size: 1.4rem;
-}
-
-.success {
-  display: flex;
-  background-color: #d6adc5;
-}
-
-.error {
-  display: flex;
-  background-color: red;
+  color: #0d1028;
 }
 
 .footer {
