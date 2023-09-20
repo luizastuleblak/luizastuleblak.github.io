@@ -308,7 +308,7 @@ section {
 	width: 70%;
 
 	.tab-content {
-		display: grid;
+		display: none;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 1rem;
 		margin: 1rem 0;
@@ -330,7 +330,7 @@ section {
 	}
 }
 
-.tab-content .active-content {
+.tab-content.active-content {
 	display: grid;
 	transition: all .4s ease;
 	animation: anim .3s linear;
@@ -481,8 +481,8 @@ section {
 	}
 }
 
-
 // MEDIA
+
 @media (max-width: 1024px) {
 	.skills-container {
 		grid-template-columns: repeat(3, 1fr);
@@ -516,9 +516,9 @@ section {
 		opacity: 1;
 	}
 
-		.nav-container {
-			margin-bottom: 2rem;
-		}
+	.nav-container {
+		margin-bottom: 2rem;
+	}
 
 	.home-container {
 

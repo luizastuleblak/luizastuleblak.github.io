@@ -5,7 +5,7 @@ const navList = document.querySelector('.navlist');
 const nav = document.querySelector('nav');
 const footerYear = document.querySelector('.footer-year');
 
-function tabOpen(nam) { 
+function tabOpen(name) { 
 	for(portfolioTab of portfolioTabs) {
 		portfolioTab.classList.remove('active-btn');
 	}
@@ -13,7 +13,7 @@ function tabOpen(nam) {
 		tabContent.classList.remove('active-content')
 	}
 	event.currentTarget.classList.add('active-btn');
-	document.getElementById(nam).classList.add('active-content')
+	document.getElementById(name).classList.add('active-content')
 }
  
 
@@ -23,10 +23,8 @@ menuBtn.onclick = function () {
 }
 
 window.onscroll = function () {
-	// navList.classList.remove('active');
-	// menuBtn.classList.remove('ri-arrow-up-double-line');
-	// menuBtn.classList.toggle('ri-arrow-up-double-line');
-	// navList.classList.toggle('active');
+	navList.classList.remove('active');
+	menuBtn.classList.remove('ri-arrow-up-double-line');
 
 	if (scrollY > 50) {
 		nav.classList.add('scrolling')
