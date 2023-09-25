@@ -258,6 +258,18 @@
 	</div>
 </footer>
 <script src="https://unpkg.com/scrollreveal"></script>
+<script src="push.min.js"></script>
+<script>Push.Permission.request();
+	$(".button").on("click", function () {
+		Push.create('Cześć!', {
+			body: 'Zobacz nowy artykuł na Devcorner - "Najprostszy sposób na pokazanie powiadomień Push".',
+			icon: 'icon.png',
+			timeout: 6000,
+			onClick: function () {
+				console.log('Kliknięto powiadomienie.');
+			}
+		});
+	});</script>
 	<script src="./js/script.js"></script>
 </body>
 
